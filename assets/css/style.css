@@ -14,10 +14,36 @@ header {
 .quiz-container {
     border-style: solid;
     margin: 20px 500px 60px 500px;
+    text-align: center;
+}
+
+.question {
+    padding: 5px;
+    margin: 5px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.options button {
+    padding: 5px;
+    margin: 5px;
+}
+
+.result {
+    padding: 10px;
 }
 
 .timer-card {
     border-style: solid;
-    margin: 10px 700px 50px 700px;
+    margin: 10px 800px 50px 800px;
     text-align: center;
+}
+
+.timer {
+    margin: 10px;
+    font-size: 200%;
 }
