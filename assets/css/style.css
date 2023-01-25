@@ -1,0 +1,23 @@
+header {
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+    padding: 25px;
+}
+
+.score-card {
+    border-style: solid;
+    margin: 10px 700px 50px 700px;
+    text-align: center;
+}
+
+.quiz-container {
+    border-style: solid;
+    margin: 20px 500px 60px 500px;
+}
+
+.timer-card {
+    border-style: solid;
+    margin: 10px 700px 50px 700px;
+    text-align: center;
+}
