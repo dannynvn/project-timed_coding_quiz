@@ -17,9 +17,9 @@ header {
     text-align: center;
 }
 
-.question {
+.question-text {
     padding: 5px;
-    margin: 5px;
+    margin: 15px;
 }
 
 .options {
@@ -28,9 +28,20 @@ header {
     margin: 5px;
 }
 
-.options button {
+#option-button-one {
     padding: 5px;
-    margin: 5px;
+}
+
+#option-button-two {
+    padding: 5px;
+}
+
+#option-button-three {
+    padding: 5px;
+}
+
+#option-button-four {
+    padding: 5px;
 }
 
 .result {
