@@ -5,10 +5,18 @@ header {
     padding: 25px;
 }
 
+.start-button {
+
+}
+
 .score-card {
     border-style: solid;
     margin: 10px 700px 50px 700px;
     text-align: center;
+}
+
+.score {
+    
 }
 
 .quiz-container {
@@ -58,3 +66,4 @@ header {
     margin: 10px;
     font-size: 200%;
 }
+
