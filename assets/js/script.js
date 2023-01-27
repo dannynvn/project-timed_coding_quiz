@@ -13,6 +13,7 @@ var resultText = document.querySelector(".result");
 
 var timer;
 var timerCount;
+var quizComplete = false;
 
 
 //list of questions
@@ -39,6 +40,9 @@ var questionThree = {
 function startQuiz() {
     //variable to check if quiz should continue
     var quizComplete = false;
+    timerCount = 15;
+    startButton.disabled = true;
+    startTimer();
     showQuestionOne();
 
 }
@@ -49,8 +53,16 @@ function startTimer() {
         timerCount--;
         timerEl.textContent = timerCount;
         if (timerCount >= 0) {
+            if(quizComplete && timerCount > 0) {
+                clearInterval(timer);
+                endQuiz();
+            }
         }
-    })
+        if (timerCount === 0) {
+            clearInterval(timer);
+            endQuiz();
+        }
+    }, 1000);
 }
 
 //functions checking answer and moving onto next question
@@ -68,6 +80,7 @@ function correctAnswer() {
         showQuestionThree();
     } else {
         console.log("quiz complete");
+        endQuiz();
         resultText.textContent = "Quiz complete!";
     }
 }
@@ -86,6 +99,8 @@ function wrongAnswer() {
         showQuestionThree();
     } else {
         console.log("game over");
+        endQuiz();
+        resultText.textContent = "Quiz complete!";
     }
 }
 
@@ -116,9 +131,8 @@ function checkQuizStatus() {
 
 //ends the quiz if user answers all questions before timer is up or if timer completes count to 0 before user answers all questions
 function endQuiz() {
-    if (quizComplete) {
-        timerEl.textContent = "0";
-    }
+    quizComplete = true;
+    timerEl.textContent = "0";
 }
 
 //question 1 and options becomes visible for user
