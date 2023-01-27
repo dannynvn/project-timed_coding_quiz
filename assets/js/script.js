@@ -36,14 +36,12 @@ var questionThree = {
     //answer: option 2
 }
 
+//function that loads each time application is refreshed
 function init() {
     getScore();
     console.log('reloaded');
 }
 
-// function renderScore() {
-//     var lastScore = 
-// }
 
 //start quiz when user clicks start button
 function startQuiz() {
@@ -64,7 +62,7 @@ function startTimer() {
         if (timerCount >= 0) {
             if(quizComplete && timerCount > 0) {
                 clearInterval(timer);
-                endQuiz();
+                // endQuiz();
             }
         }
         if (timerCount === 0 || timerCount < 0) {
@@ -148,7 +146,7 @@ function getScore() {
 
 //ask for user's initials to save with score
 function enterInitials() {
-    userInitials = prompt("enter initials");
+    userInitials = prompt("Please enter your initials to save score");
 }
 
 
