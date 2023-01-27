@@ -10,6 +10,8 @@ var resultText = document.querySelector(".result");
 var savedScore = document.querySelector(".saved-score");
 
 var questionNumber = 1;
+var storedScore;
+var userInitials;
 var timer;
 var timerCount;
 var quizComplete = false;
@@ -34,6 +36,14 @@ var questionThree = {
     //answer: option 2
 }
 
+function init() {
+    getScore();
+    console.log('reloaded');
+}
+
+// function renderScore() {
+//     var lastScore = 
+// }
 
 //start quiz when user clicks start button
 function startQuiz() {
@@ -123,21 +133,32 @@ function checkQuizStatus() {
 //setScore function
 function setScore() {
     if (quizComplete) {
-        savedScore.textContent = userScore.innerHTML;
+        enterInitials();
+        storedScore = userInitials + " - " + userScore.innerHTML;
+        savedScore.textContent = storedScore;
+        localStorage.setItem("saved-score", storedScore);
     }
 }
 
-//textContent to user score
-//add to local storage
+function getScore() {
+    if (storedScore !== null) {
+        savedScore.textContent = localStorage.getItem("saved-score")
+    }
+}
+
+//ask for user's initials to save with score
+function enterInitials() {
+    userInitials = prompt("enter initials");
+}
 
 
 //ends the quiz if user answers all questions before timer is up or if timer completes count to 0 before user answers all questions
 function endQuiz() {
     quizComplete = true;
     resetOptions();
-    setScore();
     resultText.textContent = "Quiz complete!";
     timerEl.textContent = "0";
+    setScore();
 }
 
 //question 1 and options becomes visible for user
@@ -190,6 +211,9 @@ function showQuestionThree() {
 
     return;
 }
+
+//runs when page loads
+init();
 
 //event listener to start quiz when user presses start button
 startButton.addEventListener("click", startQuiz);
