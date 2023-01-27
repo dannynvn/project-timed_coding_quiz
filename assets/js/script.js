@@ -86,10 +86,11 @@ function correctAnswer() {
 }
 
 function wrongAnswer() {
-    resultText.textContent = "Incorrect!";
+    resultText.textContent = "Incorrect! -5 seconds";
     console.log("incorrect answer is chosen");
     questionNumber++
     //subtract 5 seconds from timer
+    timerCount -= 5;
     //move onto next question
     if (questionNumber == 2) {
         resetOptions();
