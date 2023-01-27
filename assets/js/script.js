@@ -58,7 +58,7 @@ function startTimer() {
                 endQuiz();
             }
         }
-        if (timerCount === 0) {
+        if (timerCount === 0 || timerCount < 0) {
             clearInterval(timer);
             endQuiz();
         }
@@ -81,7 +81,6 @@ function correctAnswer() {
     } else {
         console.log("quiz complete");
         endQuiz();
-        resultText.textContent = "Quiz complete!";
     }
 }
 
@@ -101,7 +100,6 @@ function wrongAnswer() {
     } else {
         console.log("game over");
         endQuiz();
-        resultText.textContent = "Quiz complete!";
     }
 }
 
@@ -133,6 +131,8 @@ function checkQuizStatus() {
 //ends the quiz if user answers all questions before timer is up or if timer completes count to 0 before user answers all questions
 function endQuiz() {
     quizComplete = true;
+    resetOptions();
+    resultText.textContent = "Quiz complete!";
     timerEl.textContent = "0";
 }
 

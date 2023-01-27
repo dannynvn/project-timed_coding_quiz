@@ -16,7 +16,7 @@ header {
 }
 
 .score {
-    
+
 }
 
 .quiz-container {
@@ -67,3 +67,14 @@ header {
     font-size: 200%;
 }
 
+.leader-board {
+    border-style: solid;
+    margin: 10px 700px 50px 700px;
+    text-align: center;
+}
+
+.leader-board li {
+    list-style-type: none;
+    text-align: left;
+    font-weight: bold;
+}
