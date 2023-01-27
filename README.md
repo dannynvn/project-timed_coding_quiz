@@ -2,7 +2,7 @@
 
 ## Description
 This is a timed 3-question quiz created from JavaScript, HTML, and CSS.
-Link to deployed application:
+Link to deployed application: https://dannynvn.github.io/project-timed_coding_quiz/
 
 ## Usage
 This application includes the following functionality:
