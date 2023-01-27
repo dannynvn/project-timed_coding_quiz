@@ -110,7 +110,7 @@ function wrongAnswer() {
     }
 }
 
-//function to reset event listeners
+//function to reset event listeners after each question
 function resetOptions() {
     questionOptionOne.removeEventListener("click",correctAnswer);
     questionOptionTwo.removeEventListener("click",correctAnswer);
@@ -122,13 +122,8 @@ function resetOptions() {
     questionOptionFour.removeEventListener("click",wrongAnswer);
 }
 
-//check if quiz should end
-function checkQuizStatus() {
-    //if all questions answered or timer is 0, then quiz ends
-    quizComplete = true;
-}
 
-//setScore function
+//setScore function that saves score to local storage
 function setScore() {
     if (quizComplete) {
         enterInitials();
@@ -138,13 +133,14 @@ function setScore() {
     }
 }
 
+//function that retrieves previously saved score to be invoked through the init function
 function getScore() {
     if (storedScore !== null) {
         savedScore.textContent = localStorage.getItem("saved-score")
     }
 }
 
-//ask for user's initials to save with score
+//prompt that asks for user's initials to save with score
 function enterInitials() {
     userInitials = prompt("Please enter your initials to save score");
 }
@@ -153,6 +149,7 @@ function enterInitials() {
 //ends the quiz if user answers all questions before timer is up or if timer completes count to 0 before user answers all questions
 function endQuiz() {
     quizComplete = true;
+    clearInterval(timer);
     resetOptions();
     resultText.textContent = "Quiz complete!";
     timerEl.textContent = "0";

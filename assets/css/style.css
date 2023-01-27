@@ -1,33 +1,45 @@
 header {
+    background-color: blanchedalmond;
     border-radius: 5px;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
     padding: 25px;
 }
 
 .start-button {
-
+    font-weight: bold;
+    padding: 15px;
 }
 
 .score-card {
+    display: flex;
+    background-color: beige;
+    border-color: darkolivegreen;
     border-style: solid;
-    margin: 10px 700px 50px 700px;
-    text-align: center;
+    margin-right: 40%;
+    margin-left: 40%;
+    margin-bottom: 1%;
+    justify-content: center;
 }
 
 .score {
-
+text-align: center;
 }
 
 .quiz-container {
+    background-color: beige;
+    border-color: darkolivegreen;
+    display: flex-inline;
     border-style: solid;
-    margin: 20px 500px 60px 500px;
+    margin: 2% 15% 2% 15%;
     text-align: center;
 }
 
 .question-text {
     padding: 5px;
     margin: 15px;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 .options {
@@ -53,12 +65,16 @@ header {
 }
 
 .result {
-    padding: 10px;
+    font-size: 90%;
+    margin-bottom: 1%;
 }
 
 .timer-card {
+    background-color: beige;
+    border-color: darkolivegreen;
+    display: flex-inline;
     border-style: solid;
-    margin: 10px 800px 50px 800px;
+    margin: 2% 35% 2% 35%;
     text-align: center;
 }
 
@@ -68,8 +84,11 @@ header {
 }
 
 .saved-score-card {
+    background-color: beige;
+    border-color: darkolivegreen;
+    display: flex-inline;
     border-style: solid;
-    margin: 10px 700px 50px 700px;
+    margin: 2% 35% 2% 35%;
     text-align: center;
 }
 
@@ -80,5 +99,6 @@ header {
 }
 
 .saved-score {
+    font-size: 115%;
 }
 
