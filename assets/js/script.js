@@ -1,16 +1,15 @@
 var startButton = document.querySelector(".start-button");
 var userScore = document.querySelector(".score");
 var timerEl = document.querySelector(".timer");
-var questionNumber = 1;
-
 var questionTitle = document.querySelector(".question-text");
 var questionOptionOne = document.querySelector("#option-button-one");
 var questionOptionTwo = document.querySelector("#option-button-two");
 var questionOptionThree = document.querySelector("#option-button-three");
 var questionOptionFour = document.querySelector("#option-button-four");
 var resultText = document.querySelector(".result");
+var savedScore = document.querySelector(".saved-score");
 
-
+var questionNumber = 1;
 var timer;
 var timerCount;
 var quizComplete = false;
@@ -122,16 +121,21 @@ function checkQuizStatus() {
 }
 
 //setScore function
+function setScore() {
+    if (quizComplete) {
+        savedScore.textContent = userScore.innerHTML;
+    }
+}
+
 //textContent to user score
 //add to local storage
 
-//get high score function
-//show highest scores on leaderboard
 
 //ends the quiz if user answers all questions before timer is up or if timer completes count to 0 before user answers all questions
 function endQuiz() {
     quizComplete = true;
     resetOptions();
+    setScore();
     resultText.textContent = "Quiz complete!";
     timerEl.textContent = "0";
 }

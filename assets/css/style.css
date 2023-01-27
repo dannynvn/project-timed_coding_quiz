@@ -67,14 +67,18 @@ header {
     font-size: 200%;
 }
 
-.leader-board {
+.saved-score-card {
     border-style: solid;
     margin: 10px 700px 50px 700px;
     text-align: center;
 }
 
-.leader-board li {
+.saved-score-card li {
     list-style-type: none;
     text-align: left;
     font-weight: bold;
 }
+
+.saved-score {
+}
+
